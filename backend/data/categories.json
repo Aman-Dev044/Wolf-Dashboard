@@ -1,0 +1,164 @@
+[
+  {
+    "wpId": 33,
+    "name": "Apple",
+    "slug": "apple",
+    "group": "mobile-phones",
+    "description": "",
+    "image": "/uploads/2026/07/front-1-1.png",
+    "count": 2
+  },
+  {
+    "wpId": 57,
+    "name": "Bluetooth HeadPhones",
+    "slug": "bluetooth-headphones",
+    "group": "accessories",
+    "description": "",
+    "image": "/uploads/2026/10/44.2-apple-airpod-pro-wireless-case-front-400x400-dollars399.png",
+    "count": 16
+  },
+  {
+    "wpId": 61,
+    "name": "Bluetooth Speakers",
+    "slug": "bluetooth-speakers",
+    "group": "accessories",
+    "description": "",
+    "image": "/uploads/2026/10/ULTIMATE-EARS-WONDERBOOM-3.png",
+    "count": 12
+  },
+  {
+    "wpId": 60,
+    "name": "Bolt On Technology",
+    "slug": "bolt-on-technology",
+    "group": "accessories",
+    "description": "",
+    "image": "/uploads/2026/10/15.1-apple-pencil-gen-2-400x400-dollars192.png",
+    "count": 2
+  },
+  {
+    "wpId": 64,
+    "name": "Fetch",
+    "slug": "fetch",
+    "group": "other",
+    "description": "",
+    "image": "/uploads/2026/10/1-6.png",
+    "count": 2
+  },
+  {
+    "wpId": 32,
+    "name": "Google",
+    "slug": "google",
+    "group": "mobile-phones",
+    "description": "",
+    "image": "/uploads/2026/07/front-2-1.png",
+    "count": 2
+  },
+  {
+    "wpId": 65,
+    "name": "Google Home Devices",
+    "slug": "google-home-devices",
+    "group": "accessories",
+    "description": "",
+    "image": "/uploads/2026/10/front-1-5.png",
+    "count": 5
+  },
+  {
+    "wpId": 27,
+    "name": "HMD",
+    "slug": "hmd",
+    "group": "mobile-phones",
+    "description": "",
+    "image": "/uploads/2026/07/barbie.png",
+    "count": 1
+  },
+  {
+    "wpId": 63,
+    "name": "Mobile Internet",
+    "slug": "mobile-internet",
+    "group": "other",
+    "description": "",
+    "image": "/uploads/2026/10/netgear-nighthawk-m6-5g-.png",
+    "count": 6
+  },
+  {
+    "wpId": 30,
+    "name": "Nokia",
+    "slug": "nokia",
+    "group": "mobile-phones",
+    "description": "",
+    "image": "/uploads/2026/07/Nokia-215-4G-2.jpg",
+    "count": 1
+  },
+  {
+    "wpId": 29,
+    "name": "Opel",
+    "slug": "opel",
+    "group": "mobile-phones",
+    "description": "",
+    "image": "/uploads/2026/07/opel-lite-5.jpg",
+    "count": 2
+  },
+  {
+    "wpId": 25,
+    "name": "Oppo",
+    "slug": "oppo",
+    "group": "mobile-phones",
+    "description": "",
+    "image": "/uploads/2026/07/2.OPPO_A5_5G_Productimages_MistWhite_Combination_PSD_RGB_20250313.webp",
+    "count": 1
+  },
+  {
+    "wpId": 26,
+    "name": "Refurbished",
+    "slug": "refurbished",
+    "group": "mobile-phones",
+    "description": "",
+    "image": "/uploads/2026/07/front-1.png",
+    "count": 2
+  },
+  {
+    "wpId": 34,
+    "name": "Samsung",
+    "slug": "samsung",
+    "group": "mobile-phones",
+    "description": "",
+    "image": "/uploads/2026/07/front-3.png",
+    "count": 2
+  },
+  {
+    "wpId": 59,
+    "name": "Smart Watches",
+    "slug": "smart-watches",
+    "group": "accessories",
+    "description": "",
+    "image": "/uploads/2026/10/Galaxy-watch-8.png",
+    "count": 13
+  },
+  {
+    "wpId": 35,
+    "name": "Telstra",
+    "slug": "telstra",
+    "group": "mobile-phones",
+    "description": "",
+    "image": "/uploads/2026/07/PDP-Telstra-T-Prime-5G-900x1200-1-1.jpg",
+    "count": 4
+  },
+  {
+    "wpId": 19,
+    "name": "Uncategorized",
+    "slug": "uncategorized",
+    "group": "other",
+    "description": "",
+    "image": "/uploads/2026/07/Moto-G04-blue-front-900x1200-2x-1.jpg",
+    "count": 1
+  },
+  {
+    "wpId": 62,
+    "name": "Xbox",
+    "slug": "xbox",
+    "group": "accessories",
+    "description": "",
+    "image": "/uploads/2026/10/22.1-xboxone-wirelesscontroller-black-angle-400x400-dollars89.jpg",
+    "count": 2
+  }
+]

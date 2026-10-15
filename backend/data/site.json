@@ -1,0 +1,204 @@
+{
+  "brand": {
+    "name": "Wolf",
+    "legalName": "Wolf Group of Stores",
+    "domain": "wolfstores.com.au",
+    "tagline": "Your one stop shop",
+    "logo": "/uploads/2026/07/main-logo.png",
+    "logoDark": "/uploads/2026/07/dark-logo.png",
+    "foundingYear": 1989,
+    "founder": "Wolf Haefele",
+    "footerAbout": "Operating as a Telstra Partner since 1991, the Wolf Group has grown to become one of Gippsland’s largest and most awarded Telstra Partner.",
+    "copyright": "© 2026 wolfstores.Com.au All rights reserved."
+  },
+  "hero": {
+    "eyebrow": "Your one stop shop",
+    "title": "Welcome to WOLF",
+    "text": "We are the true one stop shop for all of your business telecommunications and technology requirements.",
+    "cta": { "label": "View Products", "href": "/shop/" },
+    "image": "/uploads/2026/07/hero-banner-bg.jpg"
+  },
+  "quickLinks": [
+    { "label": "Make a Payment", "href": "/contact-us/" },
+    { "label": "OPEL", "href": "/product-category/opel/" },
+    { "label": "LOCKED PHONES", "href": "/product-category/telstra/" },
+    { "label": "GOOGLE", "href": "/product-category/google/" },
+    { "label": "APPLE", "href": "/product-category/apple/" },
+    { "label": "SAMSUNG", "href": "/product-category/samsung/" }
+  ],
+  "trendingTabs": [
+    { "label": "All", "category": "" },
+    { "label": "Apple", "category": "apple" },
+    { "label": "Google", "category": "google" },
+    { "label": "HMD", "category": "hmd" },
+    { "label": "Opel", "category": "opel" },
+    { "label": "Telstra", "category": "telstra" }
+  ],
+  "about": {
+    "title": "About Us",
+    "intro": "Wolf has expanded to offer a full range of services providing a true one stop shop for our customers.",
+    "origin": "The Wolf Group of Stores was originally founded as “Wolf Car Alarms”, originally founded in 1989. The business name comes from Wolf Haefele – the founder of the business.",
+    "image": "/uploads/2026/07/about-img.jpg",
+    "banner": "/uploads/2026/07/about-banner.jpg",
+    "whatWeDoImage": "/uploads/2026/07/what-we-do-img.jpg"
+  },
+  "services": [
+    "Telstra Business Plans & Account Reviews",
+    "GPS Tracking Solutions",
+    "Telstra Account Health Checks",
+    "Telstra Office Phone Systems",
+    "IT Technical Support and Managed Services",
+    "Business NBN Solutions",
+    "Mobile Fleet Solutions – Tablet & Mobile WiFi"
+  ],
+  "store": {
+    "eyebrow": "Wolf STORE",
+    "title": "Wolf: Everything You Need, All in One Place",
+    "text": "The Wolf Group of Stores was originally founded as “Wolf Car Alarms”, originally founded in 1989. The business name comes from Wolf Haefele – the founder of the business.",
+    "image": "/uploads/2026/07/phone-img.jpg"
+  },
+  "history": {
+    "title": "Wolf: History",
+    "text": [
+      "WOLF was established from a small home office, as Gippsland’s first Telstra dealer in 1989 – supplying government and corporate customers large mobile phones, that had to be installed into vehicles.",
+      "As the technology got more cost effective, and smaller – so did the popularity in devices. To keep up with this trend, a retail premise was opened in Traralgon in 1998 in the current location. Seeing a need for the growing population in West Gippsland, a retail presence was opened in 2003 in Warragul."
+    ],
+    "image": "/uploads/2026/07/wolf-history-sec-img.jpg",
+    "video": "/uploads/2026/07/history-video-bg.mp4",
+    "milestones": [
+      { "year": "1989", "text": "Gippsland’s first Telstra dealer, started from a small home office" },
+      { "year": "1991", "text": "Operating as a Telstra Partner" },
+      { "year": "1998", "text": "Retail premise opened in Traralgon" },
+      { "year": "2003", "text": "Retail presence opened in Warragul" }
+    ]
+  },
+  "cta": {
+    "text": "We offer a customer focused experience for all of your communications requirements. From Telstra bill enquiries and health checks, the latest mobile phones and accessories, home phone and internet – as well as Telstra Business Services.",
+    "label": "Visit Now",
+    "href": "/contact-us/",
+    "image": "/uploads/2026/07/bg-girl-img.jpg"
+  },
+  "partners": {
+    "title": "PARTNERS & Brands",
+    "text": "Explore the Exciting Brands We Offer!",
+    "logos": [
+      { "name": "Apple", "src": "/uploads/2026/07/apple.png" },
+      { "name": "Google", "src": "/uploads/2026/07/googlw.png" },
+      { "name": "Oppo", "src": "/uploads/2026/07/oppo.png" },
+      { "name": "LG", "src": "/uploads/2026/07/lg.png" },
+      { "name": "Nokia", "src": "/uploads/2026/07/NOKIA.png" },
+      { "name": "EFM", "src": "/uploads/2026/07/EFM.png" },
+      { "name": "LifeProof", "src": "/uploads/2026/07/life_proof.png" },
+      { "name": "Samsung", "src": "/uploads/2026/07/samsung.png" }
+    ]
+  },
+  "testimonials": [
+    {
+      "eyebrow": "What people said",
+      "title": "Love the way they handle the order.",
+      "quote": "Very professional and friendly at the same time. They packed the order on schedule and the detail of their wrapping is top notch. One of my best experience for buying online items. Surely will come back for another purchase.",
+      "name": "Samantha William",
+      "role": "Tech Enthusiast"
+    }
+  ],
+  "team": [
+    {
+      "group": "Our Senior Management & Administration Team",
+      "members": [
+        { "name": "Shae Haefele", "role": "Dealer Principal and Director", "joined": "2004", "email": "shae@wolfstores.com.au", "image": "/uploads/2026/07/shae-haefele-headshot.png" }
+      ]
+    },
+    {
+      "group": "Our Wolf Business Centre Team",
+      "members": [
+        { "name": "Lisa Mackrell", "role": "Business and Corporate Account Manager", "joined": "2009", "email": "lisa@wolfbusiness.com.au", "image": "/uploads/2026/07/lisa-mackrell-img.png" }
+      ]
+    },
+    {
+      "group": "Our Retail Management Team",
+      "members": [
+        { "name": "Andrea Barnes", "role": "Manager Torquay", "joined": "2011", "email": "andrea@wolfstores.com.au", "image": "/uploads/2026/07/andrea-barnes-img.png" },
+        { "name": "Bec Ellul", "role": "Manager Gippsland Stores", "joined": "2011", "email": "bec@wolfbusiness.com.au", "image": "/uploads/2026/07/bec-ellul-img.png" }
+      ]
+    }
+  ],
+  "awards": [
+    { "year": "2019", "title": "Telstra Partner Customer Service Award 2023 – Warragul Store Telstra Regional Partner of the Year 2019" },
+    { "year": "2019", "title": "Telstra Regional Partner Store of the Year 2019 (Traralgon)" },
+    { "year": "2018", "title": "Telstra Regional Partner of the Year 2018" },
+    { "year": "2018", "title": "Telstra Regional Partner Store of the Year 2018 (Traralgon)" },
+    { "year": "2010-2011", "title": "Telstra Internet Sales Contribution Award 2010/2011" },
+    { "year": "2010", "title": "Telstra Customer Service Excellence Award 2010" }
+  ],
+  "stores": [
+    {
+      "slug": "traralgon",
+      "name": "Wolf Traralgon",
+      "street": "17 Post Office Pl",
+      "city": "Traralgon",
+      "region": "VIC",
+      "postcode": "3844",
+      "country": "AU",
+      "address": "17 Post Office Pl, Traralgon VIC 3844, Aus",
+      "phone": "03 5174 9448",
+      "email": "traralgon@wolfstores.com.au",
+      "map": "https://maps.google.com/maps?q=Wolf%20Traralgon%2017%20Post%20Office%20Pl%2C%20Traralgon%20VIC%203844%2C%20Aus&t=m&z=10&output=embed&iwloc=near"
+    },
+    {
+      "slug": "warragul",
+      "name": "Wolf Warragul",
+      "street": "45 Victoria St",
+      "city": "Warragul",
+      "region": "VIC",
+      "postcode": "3820",
+      "country": "AU",
+      "address": "45 Victoria St, Warragul VIC 3820, Australia",
+      "phone": "03 5622 3777",
+      "email": "warragul@wolfstores.com.au",
+      "map": "https://maps.google.com/maps?q=Wolf%20Warragul%2045%20Victoria%20St%2C%20Warragul%20VIC%203820%2C%20Australia&t=m&z=10&output=embed&iwloc=near"
+    },
+    {
+      "slug": "torquay",
+      "name": "Torquay Store",
+      "street": "Shop 1A, 9 Gilbert Street",
+      "city": "Torquay",
+      "region": "VIC",
+      "postcode": "3228",
+      "country": "AU",
+      "address": "Shop 1A, 9 Gilbert Street Torquay VIC 3228",
+      "phone": "03 5264 5888",
+      "email": "torquay@wolfstores.com.au",
+      "map": "https://maps.google.com/maps?q=Shop%201A%2C%209%20Gilbert%20Street%20Torquay%20VIC%203228&t=m&z=10&output=embed&iwloc=near"
+    }
+  ],
+  "contactStores": ["Wolf Traralgon Store", "Wolf Warragul Store", "Wolf Torquay Store", "Wolf Hamilton Store"],
+  "tradingHours": [
+    { "days": "MON – FRI", "hours": "8.30am to 5.30pm" },
+    { "days": "SATURDAY", "hours": "8.30am to 1.30pm" },
+    { "days": "SUNDAY", "hours": "Closed" }
+  ],
+  "publicHolidaysNote": "Public Holidays: Please check our facebook page",
+  "social": {
+    "facebook": "https://www.facebook.com/wolftelstrapartner/",
+    "x": "",
+    "instagram": "",
+    "linkedin": ""
+  },
+  "newsletter": {
+    "title": "STAY IN THE LOOP",
+    "text": "Subscribe to get special offers, free giveaways, and once-in-a-lifetime deals."
+  },
+  "questions": {
+    "title": "Do you have Questions for us ?",
+    "text": "We are here for you. Feel free to reach to us, our team is ready to answer all your questions"
+  },
+  "deliveryNotice": "There are current disruptions to our delivery process. We’re working hard to iron these out and bring you the best possible service . During this time, you may experience delays of up to 15 days. We’re sorry for the inconvenience, but we’ll stay in touch and keep you posted on the progress of your order.",
+  "faq": [
+    { "q": "Where are your stores?", "a": "We have stores in Traralgon (17 Post Office Pl), Warragul (45 Victoria St) and Torquay (Shop 1A, 9 Gilbert Street)." },
+    { "q": "What are your trading hours?", "a": "Monday to Friday 8.30am to 5.30pm, Saturday 8.30am to 1.30pm, closed Sunday. For public holidays please check our Facebook page." },
+    { "q": "Can I pick up my order in store?", "a": "Yes. At checkout choose “Pick up in store” and select your preferred Wolf store." },
+    { "q": "How long does delivery take?", "a": "There are current disruptions to our delivery process and you may experience delays of up to 15 days. We’ll keep you posted on the progress of your order." },
+    { "q": "How do I track my order?", "a": "Use the Tracking Package page with your order number and the email address you used at checkout." },
+    { "q": "Do you offer business services?", "a": "Yes – Telstra Business Plans & Account Reviews, GPS Tracking Solutions, Office Phone Systems, IT Support and Managed Services, Business NBN and Mobile Fleet Solutions." }
+  ]
+}
