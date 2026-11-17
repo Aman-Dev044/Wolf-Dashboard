@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, Mail, MapPin, Phone } from "lucide-react";
 import { NewsletterForm } from "./NewsletterForm";
-import { Reveal, SplitWords } from "./motion";
+import { Reveal } from "./motion";
 import { BackdropWord, Magnetic, MouseParallax, Parallax } from "./parallax";
 import { FacebookIcon, InstagramIcon, LinkedinIcon, XIcon } from "./icons";
 import { footerLinks } from "@/lib/nav";
@@ -26,19 +26,15 @@ export function Footer({ site }: { site: Site }) {
       {/* Oversized brand word that slides across behind the link columns. */}
       <BackdropWord text="Wolf · Wolf · Wolf" className="bottom-16" travel={-500} />
 
-      {/* Newsletter – full-width amber band */}
+      {/* Newsletter – original layout on a full-width amber band */}
       <section className="relative bg-amber text-ink">
-        <div className="container-wolf py-16 text-center sm:py-20">
-          <h2 className="text-4xl font-medium tracking-tight uppercase sm:text-5xl lg:text-[64px] lg:leading-none">
-            <SplitWords text={site.newsletter.title} />
-          </h2>
-          <Reveal delay={0.15}>
-            <p className="mx-auto mt-5 max-w-2xl text-base text-ink/75 sm:text-lg">{site.newsletter.text}</p>
-          </Reveal>
-          <Reveal delay={0.25} className="mt-8">
-            <NewsletterForm />
-          </Reveal>
-        </div>
+        <Reveal className="container-wolf flex flex-col items-start gap-8 py-12 sm:py-16 lg:flex-row lg:items-center lg:justify-between">
+          <div className="max-w-xl">
+            <h2 className="text-3xl font-bold tracking-tight sm:text-[40px]">{site.newsletter.title}</h2>
+            <p className="mt-3 text-base text-ink/70">{site.newsletter.text}</p>
+          </div>
+          <NewsletterForm />
+        </Reveal>
       </section>
 
       {/* Questions CTA */}
