@@ -21,8 +21,18 @@ export function ProductCard({ product: p, priority = false }: { product: Product
     <motion.article
       whileHover={{ y: -8 }}
       transition={{ type: "spring", stiffness: 300, damping: 22 }}
+      onPointerMove={(e) => {
+        const r = e.currentTarget.getBoundingClientRect();
+        e.currentTarget.style.setProperty("--mx", `${e.clientX - r.left}px`);
+        e.currentTarget.style.setProperty("--my", `${e.clientY - r.top}px`);
+      }}
       className="group relative flex h-full flex-col rounded-[20px] bg-white p-5 shadow-[0_1px_0_rgba(0,0,0,0.04)] ring-1 ring-black/5 transition-shadow duration-500 hover:shadow-[0_30px_60px_-25px_rgba(0,0,0,0.35)] hover:ring-amber/50"
     >
+      {/* Amber spotlight that follows the pointer across the card. */}
+      <span
+        aria-hidden
+        className="pointer-events-none absolute inset-0 rounded-[20px] opacity-0 transition-opacity duration-500 group-hover:opacity-100 bg-[radial-gradient(340px_circle_at_var(--mx,50%)_var(--my,50%),rgba(252,173,56,0.16),transparent_55%)]"
+      />
       <button
         type="button"
         onClick={() => toggleWish({ productId: p.id, slug: p.slug, name: p.name, image: img?.src || "", priceLabel: priceLabel(p) })}

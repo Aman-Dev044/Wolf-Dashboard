@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Poppins } from "next/font/google";
+import "lenis/dist/lenis.css";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -8,6 +9,7 @@ import { StoreProvider } from "@/components/StoreProvider";
 import { MotionProvider } from "@/components/MotionProvider";
 import { JsonLd } from "@/components/JsonLd";
 import { ScrollExtras } from "@/components/ScrollExtras";
+import { CursorGlow, SmoothScroll } from "@/components/parallax";
 import { getCategories, getSite } from "@/lib/api";
 import { buildNav } from "@/lib/nav";
 import { DEFAULT_DESCRIPTION, SITE_NAME, SITE_URL, organizationLd, websiteLd } from "@/lib/seo";
@@ -78,6 +80,8 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             <Footer site={site} />
             <CartDrawer />
             <ScrollExtras />
+            <SmoothScroll />
+            <CursorGlow />
           </StoreProvider>
         </MotionProvider>
       </body>

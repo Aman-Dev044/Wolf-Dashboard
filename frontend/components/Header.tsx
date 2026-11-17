@@ -221,6 +221,7 @@ export function Header({ nav, logo }: { nav: NavItem[]; logo: string }) {
               onClick={() => setMobileOpen(false)}
             />
             <motion.aside
+              data-lenis-prevent
               className="fixed inset-y-0 left-0 z-[70] flex w-[86%] max-w-sm flex-col bg-ink text-white lg:hidden"
               initial={{ x: "-100%" }}
               animate={{ x: 0 }}

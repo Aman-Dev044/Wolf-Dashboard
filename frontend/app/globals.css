@@ -152,6 +152,16 @@
     mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
   }
 
+  /* Hollow display type for the oversized words that drift behind sections. */
+  .text-outline {
+    color: transparent;
+    -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.09);
+  }
+  .text-outline-dark {
+    color: transparent;
+    -webkit-text-stroke: 1.5px rgba(0, 0, 0, 0.07);
+  }
+
   .text-gradient {
     @apply bg-gradient-to-r from-amber via-amber-soft to-amber bg-clip-text text-transparent;
   }

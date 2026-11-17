@@ -92,6 +92,7 @@ export function ProductGallery({ images, name }: { images: Img[]; name: string }
             aria-modal="true"
             aria-label={`${name} images`}
             className="fixed inset-0 z-[120] grid place-items-center bg-black/90 p-4"
+            data-lenis-prevent
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}

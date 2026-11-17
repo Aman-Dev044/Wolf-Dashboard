@@ -5,6 +5,7 @@ import { pageMeta } from "@/lib/seo";
 import { PageHero } from "@/components/PageHero";
 import { AnimatedImage } from "@/components/AnimatedImage";
 import { Reveal, SplitWords, Stagger, StaggerItem, Tilt } from "@/components/motion";
+import { BackdropWord, Magnetic, Parallax } from "@/components/parallax";
 
 export const revalidate = 60;
 
@@ -28,15 +29,18 @@ export default async function AboutPage() {
           <p className="mt-4 max-w-2xl text-lg leading-[32.5px] text-white/70 sm:text-xl">{about.origin}</p>
         </Reveal>
         <Reveal delay={0.35} className="mt-10">
-          <Link href="/contact-us/" className="btn-amber">
-            Contact Us <ArrowRight className="size-5" />
-          </Link>
+          <Magnetic>
+            <Link href="/contact-us/" className="btn-amber">
+              Contact Us <ArrowRight className="size-5" />
+            </Link>
+          </Magnetic>
         </Reveal>
       </PageHero>
 
       {/* What we do */}
-      <section className="bg-white py-20 lg:py-28" aria-labelledby="what-we-do">
-        <div className="container-wolf grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
+      <section className="relative overflow-hidden bg-white py-20 lg:py-28" aria-labelledby="what-we-do">
+        <BackdropWord text="What we do" className="top-8" travel={-360} dark={false} />
+        <div className="container-wolf relative grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
           <Reveal variant="left">
             <Tilt className="relative mx-auto max-w-md">
               <div className="relative aspect-[3/4] overflow-hidden rounded-[28px] shadow-2xl">
@@ -78,23 +82,25 @@ export default async function AboutPage() {
                   </h3>
                 </Reveal>
                 <Stagger className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-                  {g.members.map((m) => (
+                  {g.members.map((m, i) => (
                     <StaggerItem key={m.name}>
-                      <article className="group overflow-hidden rounded-[24px] bg-white ring-1 ring-black/5 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
-                        <div className="relative aspect-[4/5] overflow-hidden bg-ink">
-                          <AnimatedImage src={m.image} alt={`${m.name}, ${m.role}`} sizes="(max-width: 640px) 100vw, 25vw" className="object-cover object-top" wipe="up" />
-                          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/70 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-                          <span className="absolute top-4 left-4 z-10 rounded-full bg-amber px-3 py-1 text-xs font-semibold text-ink transition-transform duration-500 group-hover:scale-110">Since {m.joined}</span>
-                        </div>
-                        <div className="p-6">
-                          <h4 className="text-xl font-semibold text-heading">{m.name}</h4>
-                          <p className="mt-1 text-sm text-muted">{m.role}</p>
-                          <p className="mt-1 text-sm text-muted">Joined the team in {m.joined}</p>
-                          <a href={`mailto:${m.email}`} className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-heading hover:text-amber">
-                            <Mail className="size-4 text-amber" /> {m.email}
-                          </a>
-                        </div>
-                      </article>
+                      <Parallax speed={i % 2 ? 0.14 : 0} desktopOnly className="h-full">
+                        <article className="group overflow-hidden rounded-[24px] bg-white ring-1 ring-black/5 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
+                          <div className="relative aspect-[4/5] overflow-hidden bg-ink">
+                            <AnimatedImage src={m.image} alt={`${m.name}, ${m.role}`} sizes="(max-width: 640px) 100vw, 25vw" className="object-cover object-top" wipe="up" />
+                            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/70 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                            <span className="absolute top-4 left-4 z-10 rounded-full bg-amber px-3 py-1 text-xs font-semibold text-ink transition-transform duration-500 group-hover:scale-110">Since {m.joined}</span>
+                          </div>
+                          <div className="p-6">
+                            <h4 className="text-xl font-semibold text-heading">{m.name}</h4>
+                            <p className="mt-1 text-sm text-muted">{m.role}</p>
+                            <p className="mt-1 text-sm text-muted">Joined the team in {m.joined}</p>
+                            <a href={`mailto:${m.email}`} className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-heading hover:text-amber">
+                              <Mail className="size-4 text-amber" /> {m.email}
+                            </a>
+                          </div>
+                        </article>
+                      </Parallax>
                     </StaggerItem>
                   ))}
                 </Stagger>
@@ -106,7 +112,10 @@ export default async function AboutPage() {
 
       {/* Awards */}
       <section className="relative overflow-hidden bg-ink py-20 text-white lg:py-28" aria-labelledby="awards-title">
-        <div className="pointer-events-none absolute -bottom-40 left-1/2 h-80 w-[50rem] -translate-x-1/2 rounded-full bg-amber/15 blur-3xl" />
+        <Parallax speed={-0.5} className="pointer-events-none absolute -bottom-40 left-1/2 -translate-x-1/2">
+          <div className="h-80 w-[50rem] rounded-full bg-amber/15 blur-3xl" />
+        </Parallax>
+        <BackdropWord text="Award winning" className="top-6" travel={400} />
         <div className="container-wolf relative">
           <h2 id="awards-title" className="text-center text-section font-medium tracking-[0.12px]">
             <SplitWords text="Awards" />
@@ -132,9 +141,12 @@ export default async function AboutPage() {
 
       {/* History */}
       <section className="relative overflow-hidden bg-ink py-20 text-white lg:py-28" aria-labelledby="history-title">
-        <video className="absolute inset-0 size-full object-cover opacity-20" autoPlay muted loop playsInline preload="none" aria-hidden poster={history.image}>
-          <source src={history.video} type="video/mp4" />
-        </video>
+        <Parallax speed={-0.4} className="absolute inset-x-0 -inset-y-28">
+          <video className="size-full object-cover opacity-20" autoPlay muted loop playsInline preload="none" aria-hidden poster={history.image}>
+            <source src={history.video} type="video/mp4" />
+          </video>
+        </Parallax>
+        <BackdropWord text={`Since ${site.brand.foundingYear}`} className="bottom-6" travel={-380} />
         <div className="absolute inset-0 bg-gradient-to-b from-ink via-ink/70 to-ink" />
         <div className="container-wolf relative grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
           <Reveal variant="left" className="relative mx-auto aspect-[3/4] w-full max-w-md overflow-hidden rounded-[28px] ring-1 ring-white/10">

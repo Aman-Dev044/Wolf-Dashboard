@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowUpRight, Mail, MapPin, Phone } from "lucide-react";
 import { NewsletterForm } from "./NewsletterForm";
 import { Reveal } from "./motion";
+import { BackdropWord, Magnetic, MouseParallax, Parallax } from "./parallax";
 import { FacebookIcon, InstagramIcon, LinkedinIcon, XIcon } from "./icons";
 import { footerLinks } from "@/lib/nav";
 import type { Site } from "@/lib/types";
@@ -17,7 +18,13 @@ export function Footer({ site }: { site: Site }) {
 
   return (
     <footer className="relative overflow-hidden bg-ink text-white">
-      <div className="pointer-events-none absolute -top-40 left-1/2 h-80 w-[60rem] -translate-x-1/2 rounded-full bg-amber/10 blur-3xl" />
+      <Parallax speed={-0.4} className="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2">
+        <MouseParallax strength={90}>
+          <div className="h-80 w-[60rem] rounded-full bg-amber/10 blur-3xl" />
+        </MouseParallax>
+      </Parallax>
+      {/* Oversized brand word that slides across behind the link columns. */}
+      <BackdropWord text="Wolf · Wolf · Wolf" className="bottom-16" travel={-500} />
 
       {/* Newsletter */}
       <section className="container-wolf relative pt-20 pb-14">
@@ -37,9 +44,11 @@ export function Footer({ site }: { site: Site }) {
             <h3 className="text-2xl font-semibold sm:text-[28px]">{site.questions.title}</h3>
             <p className="mt-2 max-w-2xl text-slate">{site.questions.text}</p>
           </div>
-          <Link href="/contact-us/" className="btn-amber shrink-0">
-            Contact Us <ArrowUpRight className="size-5" />
-          </Link>
+          <Magnetic className="shrink-0">
+            <Link href="/contact-us/" className="btn-amber">
+              Contact Us <ArrowUpRight className="size-5" />
+            </Link>
+          </Magnetic>
         </Reveal>
       </section>
 

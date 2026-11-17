@@ -33,6 +33,7 @@ export function CartDrawer() {
               role="dialog"
               aria-modal="true"
               aria-label="Shopping cart"
+              data-lenis-prevent
               className="fixed inset-y-0 right-0 z-[90] flex w-full max-w-md flex-col bg-ink text-white shadow-2xl"
               initial={{ x: "100%" }}
               animate={{ x: 0 }}

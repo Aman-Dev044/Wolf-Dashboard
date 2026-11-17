@@ -1,7 +1,7 @@
 "use client";
 
 import Image, { type ImageProps } from "next/image";
-import { motion, useScroll, useTransform, type Variants } from "motion/react";
+import { motion, useReducedMotion, useScroll, useTransform, type Variants } from "motion/react";
 import { useRef } from "react";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
@@ -36,14 +36,16 @@ type RevealProps = {
  */
 export function ImageReveal({ children, className = "absolute inset-0", wipe = "up", delay = 0, duration = 1.2, parallax = false, blur = true }: RevealProps) {
   const ref = useRef<HTMLDivElement>(null);
+  const reduce = useReducedMotion();
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
-  const y = useTransform(scrollYProgress, [0, 1], parallax ? ["-6%", "6%"] : ["0%", "0%"]);
+  // Scroll-bound styles bypass MotionConfig's reducedMotion, so honour it here.
+  const y = useTransform(scrollYProgress, [0, 1], parallax && !reduce ? ["-8%", "8%"] : ["0%", "0%"]);
 
   const outer: Variants = {
     hidden: { clipPath: clips[wipe], opacity: wipe === "fade" ? 0 : 1 },
     show: { clipPath: "inset(0% 0% 0% 0%)", opacity: 1, transition: { duration, delay, ease: EASE } },
   };
-  const rest = parallax ? 1.12 : 1;
+  const rest = parallax ? 1.18 : 1;
   const inner: Variants = {
     hidden: { scale: rest + 0.15, filter: blur ? "blur(10px)" : "blur(0px)" },
     show: { scale: rest, filter: "blur(0px)", transition: { duration: duration + 0.3, delay, ease: EASE } },

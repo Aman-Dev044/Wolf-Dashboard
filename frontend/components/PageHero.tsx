@@ -3,6 +3,7 @@ import { ChevronRight } from "lucide-react";
 import { JsonLd } from "./JsonLd";
 import { AnimatedImage } from "./AnimatedImage";
 import { Reveal, SplitWords, Stagger, StaggerItem } from "./motion";
+import { MouseParallax, ScrollLayer } from "./parallax";
 import { breadcrumbLd } from "@/lib/seo";
 
 type Crumb = { name: string; path: string };
@@ -51,15 +52,29 @@ export function PageHero({
 }) {
   return (
     <section className="relative overflow-hidden bg-ink text-white">
+      {/* Depth, back to front: photo (slowest) → grid → glow orbs → copy, which drifts and fades last. */}
       {image && (
         <>
-          <AnimatedImage src={image} alt="" priority sizes="100vw" className="object-cover opacity-30" wipe="fade" kenBurns hoverZoom={false} />
+          <ScrollLayer speed={0.45} scaleTo={1.12} className="absolute inset-0">
+            <AnimatedImage src={image} alt="" priority sizes="100vw" className="object-cover opacity-30" wipe="fade" kenBurns hoverZoom={false} />
+          </ScrollLayer>
           <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/85 to-ink/40" />
         </>
       )}
-      <div className="grid-bg pointer-events-none absolute inset-0" />
-      <div className="pointer-events-none absolute -top-24 right-0 size-96 animate-glow rounded-full bg-amber/20 blur-[110px]" />
-      <div className="container-wolf relative py-16 sm:py-20 lg:py-24">
+      <ScrollLayer speed={0.3} className="pointer-events-none absolute inset-0">
+        <div className="grid-bg absolute inset-0" />
+      </ScrollLayer>
+      <ScrollLayer speed={0.55} className="pointer-events-none absolute -top-24 right-0">
+        <MouseParallax strength={70}>
+          <div className="size-96 animate-glow rounded-full bg-amber/20 blur-[110px]" />
+        </MouseParallax>
+      </ScrollLayer>
+      <ScrollLayer speed={0.15} className="pointer-events-none absolute -bottom-32 -left-24">
+        <MouseParallax strength={-50}>
+          <div className="size-80 animate-glow rounded-full bg-coral/10 blur-[110px] [animation-delay:-4s]" />
+        </MouseParallax>
+      </ScrollLayer>
+      <ScrollLayer speed={0.2} fade={720} className="container-wolf relative py-16 sm:py-20 lg:py-24">
         <Breadcrumbs items={crumbs} />
         {eyebrow && (
           <Reveal variant="left">
@@ -75,7 +90,7 @@ export function PageHero({
           </Reveal>
         )}
         {children}
-      </div>
+      </ScrollLayer>
     </section>
   );
 }
