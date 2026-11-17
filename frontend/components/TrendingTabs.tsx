@@ -2,10 +2,11 @@
 
 import { AnimatePresence, motion } from "motion/react";
 import { useState } from "react";
-import { ProductCard } from "./ProductCard";
+import { TrendingCard } from "./TrendingCard";
 import type { Product } from "@/lib/types";
 
-export function TrendingTabs({ tabs }: { tabs: { label: string; products: Product[] }[] }) {
+/** `categoryNames` maps category slugs to display names for each card's tag chip. */
+export function TrendingTabs({ tabs, categoryNames }: { tabs: { label: string; products: Product[] }[]; categoryNames: Record<string, string> }) {
   const [active, setActive] = useState(0);
   const current = tabs[active];
 
@@ -40,15 +41,16 @@ export function TrendingTabs({ tabs }: { tabs: { label: string; products: Produc
             animate="show"
             exit={{ opacity: 0, y: -20, transition: { duration: 0.2 } }}
             variants={{ hidden: {}, show: { transition: { staggerChildren: 0.07 } } }}
-            className="grid grid-cols-2 gap-3 sm:gap-5 md:grid-cols-3 lg:grid-cols-4 lg:gap-[30px] xl:grid-cols-5"
+            className="grid grid-cols-2 gap-3 sm:gap-6 lg:grid-cols-4 lg:gap-10 xl:gap-12"
           >
             {current.products.map((p) => (
               <motion.li
                 key={p.id}
+                className="h-full"
                 variants={{ hidden: { opacity: 0, y: 40, scale: 0.96 }, show: { opacity: 1, y: 0, scale: 1 } }}
                 transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
               >
-                <ProductCard product={p} />
+                <TrendingCard product={p} tag={p.categories.map((c) => categoryNames[c]).find(Boolean)} />
               </motion.li>
             ))}
           </motion.ul>

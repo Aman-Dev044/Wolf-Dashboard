@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight, Award, CheckCircle2, MapPin, Quote, Star, Store } from "lucide-react";
-import { getProducts, getSite } from "@/lib/api";
+import { getCategories, getProducts, getSite } from "@/lib/api";
 import { pageMeta } from "@/lib/seo";
 import { BrandMarquee } from "@/components/BrandMarquee";
 import { TrendingTabs } from "@/components/TrendingTabs";
@@ -19,11 +19,12 @@ export const metadata = pageMeta({
 });
 
 export default async function HomePage() {
-  const site = await getSite();
+  const [site, categories] = await Promise.all([getSite(), getCategories()]);
+  const categoryNames = Object.fromEntries(categories.map((c) => [c.slug, c.name]));
   const tabs = await Promise.all(
     site.trendingTabs.map(async (t) => ({
       label: t.label,
-      products: (await getProducts(t.category ? { category: t.category, limit: 5 } : { sort: "latest", limit: 5 })).items,
+      products: (await getProducts(t.category ? { category: t.category, limit: 4 } : { sort: "latest", limit: 4 })).items,
     }))
   );
   const { hero, about, store, history, cta, partners } = site;
@@ -119,7 +120,7 @@ export default async function HomePage() {
           <h2 id="trending-title" className="mb-10 text-center text-section font-medium tracking-[0.12px] text-white">
             <SplitWords text="Trending" />
           </h2>
-          <TrendingTabs tabs={tabs} />
+          <TrendingTabs tabs={tabs} categoryNames={categoryNames} />
           <Reveal className="mt-14 text-center">
             <Link href="/shop/" className="btn-ghost">
               Browse all products <ArrowRight className="size-4" />

@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, Mail, MapPin, Phone } from "lucide-react";
 import { NewsletterForm } from "./NewsletterForm";
-import { Reveal } from "./motion";
+import { Reveal, SplitWords } from "./motion";
 import { BackdropWord, Magnetic, MouseParallax, Parallax } from "./parallax";
 import { FacebookIcon, InstagramIcon, LinkedinIcon, XIcon } from "./icons";
 import { footerLinks } from "@/lib/nav";
@@ -26,20 +26,24 @@ export function Footer({ site }: { site: Site }) {
       {/* Oversized brand word that slides across behind the link columns. */}
       <BackdropWord text="Wolf · Wolf · Wolf" className="bottom-16" travel={-500} />
 
-      {/* Newsletter */}
-      <section className="container-wolf relative pt-20 pb-14">
-        <Reveal className="glass flex flex-col items-start gap-8 rounded-[32px] p-8 sm:p-12 lg:flex-row lg:items-center lg:justify-between">
-          <div className="max-w-xl">
-            <h2 className="text-3xl font-bold tracking-tight sm:text-[40px]">{site.newsletter.title}</h2>
-            <p className="mt-3 text-base text-slate">{site.newsletter.text}</p>
-          </div>
-          <NewsletterForm />
-        </Reveal>
+      {/* Newsletter – full-width amber band */}
+      <section className="relative bg-amber text-ink">
+        <div className="container-wolf py-16 text-center sm:py-20">
+          <h2 className="text-4xl font-medium tracking-tight uppercase sm:text-5xl lg:text-[64px] lg:leading-none">
+            <SplitWords text={site.newsletter.title} />
+          </h2>
+          <Reveal delay={0.15}>
+            <p className="mx-auto mt-5 max-w-2xl text-base text-ink/75 sm:text-lg">{site.newsletter.text}</p>
+          </Reveal>
+          <Reveal delay={0.25} className="mt-8">
+            <NewsletterForm />
+          </Reveal>
+        </div>
       </section>
 
       {/* Questions CTA */}
-      <section className="container-wolf relative">
-        <Reveal variant="fade" className="flex flex-col gap-6 border-y border-white/10 py-10 md:flex-row md:items-center md:justify-between">
+      <section className="container-wolf relative pt-6">
+        <Reveal variant="fade" className="flex flex-col gap-6 border-b border-white/10 py-10 md:flex-row md:items-center md:justify-between">
           <div>
             <h3 className="text-2xl font-semibold sm:text-[28px]">{site.questions.title}</h3>
             <p className="mt-2 max-w-2xl text-slate">{site.questions.text}</p>
