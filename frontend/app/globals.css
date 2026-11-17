@@ -28,7 +28,7 @@
   --text-quote: clamp(2.25rem, 1.2rem + 4.2vw, 4.0625rem); /* 65px */
   --text-store: clamp(2rem, 1.4rem + 2.4vw, 3rem); /* 48px */
   --text-eyebrow: clamp(1.25rem, 0.9rem + 1.4vw, 2.25rem); /* 36px */
-  --text-lead: clamp(1.125rem, 0.9rem + 0.9vw, 1.75rem); /* 28px */
+  --text-lead: clamp(1rem, 0.775rem + 0.9vw, 1.625rem); /* 26px */
   --text-cta: clamp(1.375rem, 1rem + 1.4vw, 2rem); /* 32px */
 
   --radius-card: 20px;
