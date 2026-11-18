@@ -20,7 +20,7 @@ export function TrendingCard({ product: p, tag }: { product: Product; tag?: stri
         e.currentTarget.style.setProperty("--mx", `${e.clientX - r.left}px`);
         e.currentTarget.style.setProperty("--my", `${e.clientY - r.top}px`);
       }}
-      className="group relative flex h-full flex-col rounded-[24px] bg-white p-5 ring-1 ring-black/5 transition-[translate,box-shadow] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-2 hover:shadow-[0_30px_60px_-25px_rgba(252,173,56,0.45)] sm:p-7 lg:rounded-[28px] lg:p-8"
+      className="group relative flex h-full flex-col rounded-[24px] bg-white p-5 ring-1 ring-black/5 transition-[translate,box-shadow] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-2 hover:shadow-[0_30px_60px_-25px_rgba(252,173,56,0.45)] sm:p-6 lg:rounded-[28px] lg:p-7"
     >
       {/* Amber spotlight that follows the pointer across the card. */}
       <span
@@ -28,7 +28,7 @@ export function TrendingCard({ product: p, tag }: { product: Product; tag?: stri
         className="pointer-events-none absolute inset-0 rounded-[inherit] bg-[radial-gradient(340px_circle_at_var(--mx,50%)_var(--my,50%),rgba(252,173,56,0.14),transparent_55%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100"
       />
 
-      <div className="relative aspect-[5/4] w-full overflow-hidden">
+      <div className="relative aspect-[3/2] w-full overflow-hidden">
         <ImageReveal wipe="up" duration={1}>
           {img && (
             <Image
@@ -45,16 +45,16 @@ export function TrendingCard({ product: p, tag }: { product: Product; tag?: stri
       </div>
 
       {tag && (
-        <span className="relative mt-5 self-start rounded-lg bg-[#f1f1f4] px-3 py-1.5 text-xs font-semibold tracking-[0.5px] text-heading uppercase sm:mt-7 sm:px-4 sm:py-2 sm:text-sm">
+        <span className="relative mt-4 self-start rounded-lg bg-[#f1f1f4] px-3 py-1.5 text-xs font-semibold tracking-[0.5px] text-heading uppercase sm:mt-5 sm:px-4 sm:text-sm">
           {tag}
         </span>
       )}
 
-      <h3 className="relative mt-4 line-clamp-2 text-[15px] leading-snug font-normal text-heading transition-colors group-hover:text-amber sm:mt-6 sm:text-lg">
+      <h3 className="relative mt-4 line-clamp-2 text-[15px] leading-snug font-normal text-heading transition-colors group-hover:text-amber sm:mt-4 sm:text-lg">
         {p.name}
       </h3>
-      <p className="relative mt-2 text-lg font-semibold text-heading sm:mt-3 sm:text-2xl">{price}</p>
-      <p className="relative mt-2 text-xs leading-relaxed tracking-[0.3px] text-muted sm:mt-3 sm:text-sm">
+      <p className="relative mt-2 text-lg font-semibold text-heading sm:mt-2 sm:text-2xl">{price}</p>
+      <p className="relative mt-2 text-xs leading-relaxed tracking-[0.3px] text-muted sm:mt-2 sm:text-sm">
         Min Cost {money(min)} Over 36 Months Plus Your Chosen Plan Costs
       </p>
     </Link>

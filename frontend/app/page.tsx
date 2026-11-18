@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, ArrowUpRight, Award, CheckCircle2, MapPin, Quote, Star, Store } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Award, CheckCircle2, CreditCard, Lock, MapPin, Phone, Quote, Star, Store, type LucideIcon } from "lucide-react";
 import { getCategories, getProducts, getSite } from "@/lib/api";
 import { pageMeta } from "@/lib/seo";
 import { BrandMarquee } from "@/components/BrandMarquee";
@@ -12,6 +12,16 @@ import { Counter, Reveal, SplitWords, Stagger, StaggerItem } from "@/components/
 import { BackdropWord, Magnetic, MouseParallax, Parallax, ScrollLayer, ScrollLine, ScrollText, ScrollZoom } from "@/components/parallax";
 
 export const revalidate = 60;
+
+/** Faint background art for each quick link, keyed by its label: a line icon, or the brand's logo. */
+const QUICK_LINK_ART: Record<string, LucideIcon | string> = {
+  "make a payment": CreditCard,
+  opel: Phone,
+  "locked phones": Lock,
+  google: "/uploads/2026/07/googlw.png",
+  apple: "/uploads/2026/07/apple.png",
+  samsung: "/uploads/2026/07/samsung.png",
+};
 
 export const metadata = pageMeta({
   title: "Wolf – Your One Stop Shop | Telstra Partner Gippsland",
@@ -94,18 +104,33 @@ export default async function HomePage() {
         {/* Quick links */}
         <Parallax speed={0.15} className="container-wolf relative pb-16 lg:pb-24">
           <Stagger className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6" gap={0.06}>
-            {site.quickLinks.map((q) => (
+            {site.quickLinks.map((q) => {
+              const Art = QUICK_LINK_ART[q.label.toLowerCase()];
+              return (
               <StaggerItem key={q.label} variant="zoom">
                 <Link
                   href={q.href}
                   className="group relative flex h-full items-center justify-between gap-2 overflow-hidden rounded-[6px] bg-white px-5 py-8 text-sm font-medium text-label uppercase transition-colors duration-500 hover:text-white lg:py-[55px]"
                 >
                   <span className="absolute inset-0 origin-bottom scale-y-0 bg-amber transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-y-100" />
+                  {Art && (
+                    <span
+                      aria-hidden
+                      className="pointer-events-none absolute -right-1 -bottom-3 h-16 w-28 origin-bottom-right -rotate-12 opacity-[0.16] transition-[rotate,scale,opacity] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-110 group-hover:rotate-0 group-hover:opacity-30 lg:h-20 lg:w-32"
+                    >
+                      {typeof Art === "string" ? (
+                        <Image src={Art} alt="" data-anim="" fill sizes="128px" className="object-contain object-right grayscale" />
+                      ) : (
+                        <Art className="ml-auto h-full w-auto" strokeWidth={1.5} />
+                      )}
+                    </span>
+                  )}
                   <span className="relative">{q.label}</span>
                   <ArrowUpRight className="relative size-4 shrink-0 transition-transform duration-500 group-hover:rotate-45" />
                 </Link>
               </StaggerItem>
-            ))}
+              );
+            })}
           </Stagger>
         </Parallax>
       </section>
@@ -154,11 +179,11 @@ export default async function HomePage() {
               <SplitWords text={about.title} />
             </h2>
             <ScrollText text={about.intro} className="mt-6 text-lg leading-[32.5px] text-white sm:text-xl" />
-            <Stagger as="ul" className="mt-8 grid gap-3 sm:grid-cols-2">
+            <Stagger as="ul" className="mt-8 grid auto-rows-fr gap-3 sm:grid-cols-2">
               {site.services.map((s) => (
                 <StaggerItem as="li" key={s} variant="right">
-                  <span className="flex h-full items-start gap-3 rounded-2xl bg-white/[0.04] p-4 text-[15px] leading-6 text-white/90 ring-1 ring-white/10 transition-colors hover:ring-amber/50">
-                    <CheckCircle2 className="mt-0.5 size-5 shrink-0 text-amber" /> {s}
+                  <span className="flex h-full items-center gap-3 rounded-2xl bg-white/[0.04] px-4 py-3.5 text-[15px] leading-6 text-white/90 ring-1 ring-white/10 transition-colors hover:ring-amber/50">
+                    <CheckCircle2 className="size-5 shrink-0 text-amber" /> {s}
                   </span>
                 </StaggerItem>
               ))}
@@ -266,7 +291,8 @@ export default async function HomePage() {
       {/* ───────────── CTA ───────────── */}
       {/* Full-bleed band; the copy still lines up with the site's content column. */}
       <section className="overflow-hidden bg-ink pb-20 lg:pb-28">
-        <ScrollZoom from={0.94} className="relative overflow-hidden">
+        {/* Height follows the picture's own ~2.4:1 shape so the whole figure shows, centred, instead of being cropped. */}
+        <ScrollZoom from={0.94} className="relative flex min-h-[clamp(420px,42vw,760px)] items-center overflow-hidden">
           <AnimatedImage src={cta.image} alt="" sizes="100vw" className="object-cover object-right" wipe="right" kenBurns hoverZoom={false} blur={false} />
           <div className="absolute inset-0 bg-gradient-to-r from-mist via-mist/90 to-mist/10" />
           <div className="container-wolf relative py-14 sm:py-16 lg:py-20">

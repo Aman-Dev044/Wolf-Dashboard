@@ -98,7 +98,7 @@ export function Footer({ site }: { site: Site }) {
             {site.stores.map((s) => (
               <li key={s.slug} className="space-y-3 text-sm">
                 <p className="flex gap-2.5 text-white">
-                  <MapPin className="mt-0.5 size-4 shrink-0 animate-float text-amber" />
+                  <MapPin className="mt-0.5 size-4 shrink-0 text-amber" />
                   <span>
                     <strong className="block font-semibold">{s.name}</strong>
                     <span className="text-slate">{s.address}</span>
@@ -107,8 +107,13 @@ export function Footer({ site }: { site: Site }) {
                 <a href={`tel:${s.phone.replace(/\s/g, "")}`} className="flex items-center gap-2.5 text-slate hover:text-amber">
                   <Phone className="size-4 shrink-0 text-amber" /> {s.phone}
                 </a>
-                <a href={`mailto:${s.email}`} className="flex items-center gap-2.5 break-all text-slate hover:text-amber">
-                  <Mail className="size-4 shrink-0 text-amber" /> {s.email}
+                {/* Long addresses wrap after the "@"; the icon stays level with the first line. */}
+                <a href={`mailto:${s.email}`} className="flex items-start gap-2.5 text-slate [overflow-wrap:anywhere] hover:text-amber">
+                  <Mail className="mt-0.5 size-4 shrink-0 text-amber" />
+                  <span>
+                    {s.email.split("@")[0]}@<wbr />
+                    {s.email.split("@")[1]}
+                  </span>
                 </a>
               </li>
             ))}

@@ -15,6 +15,7 @@
   --color-heading: #2a2a2a; /* product titles & prices */
   --color-label: #36364a;
   --color-indigo: #1c244b;
+  --color-azure: #2f80ff; /* hero picture accents */
 
   --font-sans: var(--font-inter), "Inter", system-ui, -apple-system, sans-serif;
   --font-poppins: var(--font-poppins), "Poppins", system-ui, sans-serif;

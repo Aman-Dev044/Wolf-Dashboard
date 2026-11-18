@@ -25,7 +25,7 @@ export function HeroVisual({ image }: { image: string }) {
       transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
       className="relative"
     >
-      <div className="absolute -inset-6 animate-spin-slow rounded-[40px] bg-[conic-gradient(from_0deg,transparent,rgba(252,173,56,0.45),transparent_40%)] blur-2xl" />
+      <div className="absolute -inset-6 animate-spin-slow rounded-[40px] bg-[conic-gradient(from_0deg,transparent,rgba(47,128,255,0.45),transparent_40%)] blur-2xl" />
       <MouseParallax strength={14} className="relative">
         <Tilt className="relative" max={5}>
           <motion.div style={{ y }} className="relative aspect-[4/3] overflow-hidden rounded-[32px] ring-1 ring-white/15 lg:aspect-[5/4]">
@@ -33,12 +33,12 @@ export function HeroVisual({ image }: { image: string }) {
               <Image
                 src={image}
                 data-anim=""
-                alt="Wolf team member giving a thumbs up in store"
+                alt="Inside a Wolf store"
                 fill
                 priority
                 fetchPriority="high"
                 sizes="(max-width: 1024px) 100vw, 50vw"
-                className="animate-kenburns object-cover object-[70%_center]"
+                className="animate-kenburns object-cover object-center"
               />
             </ImageReveal>
             <div className="absolute inset-0 bg-gradient-to-t from-ink/60 via-transparent to-transparent" />
@@ -51,7 +51,7 @@ export function HeroVisual({ image }: { image: string }) {
         <motion.div style={{ y: badgeUp }}>
           <motion.div initial={{ opacity: 0, x: -40 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.9, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}>
             <div className="glass flex animate-float items-center gap-3 rounded-2xl px-5 py-4 text-white">
-              <span className="grid size-10 place-items-center rounded-xl bg-amber text-ink">
+              <span className="grid size-10 place-items-center rounded-xl bg-azure text-white">
                 <BadgeCheck className="size-5" />
               </span>
               <span>

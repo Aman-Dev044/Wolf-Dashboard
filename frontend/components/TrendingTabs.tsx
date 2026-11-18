@@ -33,7 +33,7 @@ export function TrendingTabs({ tabs, categoryNames }: { tabs: { label: string; p
         ))}
       </div>
 
-      <div className="mt-12 min-h-[420px] sm:mt-[70px]" role="tabpanel" id={`trend-panel-${active}`} aria-labelledby={`trend-tab-${active}`}>
+      <div className="mt-12 min-h-[360px] sm:mt-[70px]" role="tabpanel" id={`trend-panel-${active}`} aria-labelledby={`trend-tab-${active}`}>
         <AnimatePresence mode="wait">
           <motion.ul
             key={current.label}

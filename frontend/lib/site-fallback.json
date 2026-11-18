@@ -16,7 +16,7 @@
     "title": "Welcome to WOLF",
     "text": "We are the true one stop shop for all of your business telecommunications and technology requirements.",
     "cta": { "label": "View Products", "href": "/shop/" },
-    "image": "/uploads/2026/07/hero-banner-bg.jpg"
+    "image": "/uploads/2026/07/about-banner.jpg"
   },
   "quickLinks": [
     { "label": "Make a Payment", "href": "/contact-us/" },
