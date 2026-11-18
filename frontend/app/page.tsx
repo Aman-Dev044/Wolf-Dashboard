@@ -70,14 +70,15 @@ export default async function HomePage() {
             <Reveal delay={0.35}>
               <p className="mt-7 max-w-xl text-lead leading-[1.2] font-normal text-white/70">{hero.text}</p>
             </Reveal>
-            <Reveal delay={0.5} className="mt-10 flex flex-wrap items-center gap-4">
+            {/* Both hero buttons share one size: equal columns from sm up, full-width stack on phones. */}
+            <Reveal delay={0.5} className="mt-10 grid gap-3 whitespace-nowrap sm:w-fit sm:auto-cols-fr sm:grid-flow-col sm:gap-4">
               <Magnetic>
-                <Link href="/shop/" className="btn-amber">
+                <Link href="/shop/" className="btn-amber w-full">
                   {hero.cta.label} <ArrowRight className="size-5" />
                 </Link>
               </Magnetic>
               <Magnetic>
-                <Link href="/about-us/" className="btn-ghost">
+                <Link href="/about-us/" className="btn-ghost w-full px-8 py-[11px] text-[17px] leading-8 font-bold tracking-[-0.6px]">
                   Our story
                 </Link>
               </Magnetic>
